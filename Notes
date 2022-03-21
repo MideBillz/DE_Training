@@ -1,0 +1,885 @@
+ #type' function tells you the class of the variable e.g - int, str.. etc.
+# x = 7
+# print('x is {}'.format(x))
+# print(type(x))
+
+#When dealing with money, it is important to import the decimal library. type 'None' has class 'NoneType' and evaluates to false as a bool
+#Literals - Data that is given in a variable or constant( there are 4 types: String,Numeric,Boolean,Special)
+
+#PS:
+- List comprehension
+- Dictionary comprehension
+- Tuple comprehension
+- Learn when to use tuples, list and what it means to say Dictionary is hash-data
+
+#Concatenating two tuples
+tup1 = (1, "a", False)
+tup2 = (4, 5, 6)
+
+print(tup1 + tup2)
+
+#Initializing a  5x5 numpy array with zeros
+import numpy as np
+
+n1 = np.zeros((5, 5))
+print(n1)
+
+#Pandas
+Open source library that provides data structures(Series and Dataframes) to help manage large data-sets
+Dataframes - These are mutable datatypes present in the Pandas Library
+e.g
+import pandas as pd
+df=pd.read_csv("mydata.csv")(Here is how a CSV file can be read using pandas)
+  df.head('5') ('5 is the int argument, you can enter other numbers to denote the amount of rows you want to show')
+
+Series-One dimensional pandas data structure that supports data of almost any type
+e.g
+import pandas as pd
+data = ['1',2,"three", 4.0]
+
+series = pd.Series(data)
+print(series)
+print(type(series))
+
+Note: Pandas and Numpy are --
+
+#Pandas groupby() function
+e.g
+import pandas as pd
+df = pd.DataFrame()
+
+#Create dataframe from a list
+df = pd.DataFrame()
+cars = ["Mercedes", "Hyundai", "Toyota", "Ferrari","Ford"]
+bikes = ["Honda", "TVS", "Kawasaki", "BMW","Bajaj"]
+
+df["cars"] = cars
+df["bikes"] = bikes
+
+print(df)
+
+#Create dataframe from a dictionary
+df = pd.DataFrame()
+cars = ["Mercedes", "Hyundai", "Toyota", "Ferrari","Ford"]
+bikes = ["Honda", "TVS", "Kawasaki", "BMW","Bajaj"]
+
+d = {"cars":cars, "bikes":bikes}
+df = pd.DataFrame(d)
+
+print(df)
+
+#Combine DataFrames using join() function (The join() function stacks horizontally)
+#Best method for vertical staccking is concatenating
+#How to merge DataFrames in pandas
+#How to drop all rows with NaN
+-use the dropna() function
+#Access the first five and last five entries of a dataframe
+- Use .head(5) function and the .tail(5) function
+
+#Access data from a DataFrame using a value as index
+df = pd.DataFrame()
+cars = ["Mercedes", "Hyundai", "Toyota", "Ferrari","Ford"]
+bikes = ["Honda", "TVS", "Kawasaki", "BMW","Bajaj"]
+
+d = {"cars":cars, "bikes":bikes}
+df = pd.DataFrame(d)
+
+a = [10,20,30,40,50]
+df.index = a #This assigns the numbers in the array "a" as index to the values in the lists 'cars' and 'bikes'
+
+df.loc[10]
+
+#Add single line and multi-line comments
+-Single line uses a hashtag (#)
+-multi-line comment is used with 3 triple quotes (""") e.g:
+ """
+ This
+ is
+ a
+ multi-line
+ comment
+ """
+
+#Most memory efficient way to add elements to a tuple (Trick question)
+ -Tuples are immutable datatypes.
+ -You cannot add elements to an existing tuple. A new one must be created if the values are to be changed
+
+#A dictionary
+-Dictionary uses curly brackets with keys and values
+-Dictionary is a collection of items in no particular order e.g - d = {"a":1, "b":2 }
+-They are optimized to retrieve value for known keys
+
+#Measures of central tendency
+- This refers to mean, median,standard deviation etc.. (mean(),median(),std())
+import numpy as np
+
+n1 = np.array([1,5,5,3,100,4,48])
+
+print(np.mean(n1))
+print(np.median(n1))
+print(np.std(n1))
+
+#use of a classifier
+-Classifier is used to predict the class of any data point.
+-It often uses training data to understand the relation between input variables and class
+-Classifiers are special hypothesis that are used yo assign class labels too any particular data points
+
+#convert a string to lowercase
+-string.lower() e.g:
+  variable = "AWESOME"
+  print(variable.lower()) #prints out "awesome"
+
+#List of all the keys in a dictionary
+- use function dict.keys() # this prints out every key in the dictionary
+
+#Capitalize first letter of a string
+-Use function capitalize() e.g:
+ n = 'awesome'
+ print(n.capitalize())
+
+#Insert an element at a given index
+-use function insert()
+-Can be used to insert an element at any index of choice e.g:
+
+list1 = [0, 1, 2, 3, 4, 5, 6, 7]
+
+list1.insert(6, 10) #insert 10 at 6th index
+
+print(list1)
+
+del list1 # 'del' is used to delete the list in this case
+
+#Remove duplicate elements from a list
+-First convert into a set using set() function and then use the list() function to convert it back
+PS - A set is a collection of unique elements so there is no duplicate element e.g:
+
+
+
+#Recursion
+- recursion is a function calling itself one or more times in it body
+- a recursion has to be terminated
+- there would be a problem of an infinite loop if recursion is not terminated
+
+#List comprehension
+- Used for transforming one list to another list
+- Elements can be conditionally included in the new list and each element can be transformed as needed e.g:
+    my_list = ["x", "y", "z", "z", "y"]
+    my_list = list(dict.fromkeys(my_list))
+    print(my_list)
+
+#Use of bytes() function
+- Used for returning a simple bytes object
+- Used to convert objects into byte objects, or create empty byte object of the specified size.
+
+#Types of operators
+-Logical e.g: and, or , not
+-Arithmetic e.g: +, -, *,/, %
+-Relational e.g: <,>, <=, >=, ==,!=
+-Assignment e.g: =, +=, -=, *=, %=
+-Others e.g: Membership, Identity and Bitwise Operators
+
+#"With" Statement
+- "with" statement is used for exception handling
+- A file can be opened and closed while executing a block of code, containing "with" statement without using close() function
+
+#map() function
+-map() function is used for applying a function on all elements of a specified iterable
+-consists of two parameters, function and iterable e.g:
+     def add_func(n):
+        return n * 3
+
+    num = (1, 2, 3, 4, 5, 6)
+    result = map(add_func, num)
+
+    print(list(result))
+
+#__init__ meaning
+- reserved method
+- constructor of the world of oop
+- When an object is created from a class, the __init__ methodology is called to access the attributes of the class
+
+#Tools for static analysis
+-Static analysis is how to find bugs in python
+- Two tools: pychecker and pylint
+
+#Difference between tuple and dictionary
+- Dictionary is mutable and tuple is immutable
+- This means the contents of a dictionary can be changed but that's not possible with a tuple
+
+#What is pass in python
+- Pass is a statement that does nothing when executed
+- It is a null statement
+- It is not skipped by the interpreter but the statement results in no operation
+- Used when you don't want any command to execute but a statement is required
+
+#How to copy an object
+- Not all objects can be copied
+- Use the "=" to copy an object to a variable
+- Example var = copy.copy(obj)
+
+#How to convert number to a string
+- Use str()
+- n = 10
+new_n = str(n)
+print(type(new_n))
+
+
+#Modules and packages?
+- Modules are the means to structure a program
+- Each python program file is a module
+- the folder of a program is a package of modules
+- Package can only have modules or subfolders
+
+#Difference between Numpy and Scipy
+- Numpy means Numerical python and Scipy means Scientific python
+- Numpy is basic library for defining arrays and simple mathematical problems
+- Scipy is used for complex problems like numerical integration, optimization, Machine Learning(ML) etc
+
+#len() function
+- len() used to find length of anything you can count e.g a string,array etc
+- sentence = 'This is a sentence'
+    print(len(sentence))
+
+#Encapsulation
+-Encapsulation means binding the code and data together
+-Important foundation concept of oop
+- E.g a class in python
+
+#type() function
+-
+
+split() function
+- slip() is used to split a string into shorter string by using defined separators
+- letters = ("A,B,C,D,E,F")
+    new_letters = letters.split(",")
+    print(new_letters)
+    print(type(new_letters))
+    print(len(new_letters))
+
+#docstring
+-
+
+#Lambda() function
+- Lambda() functions serve as nameless functions that are needed for short periods of time
+- PS - column(:) means "such that"
+- triple = lambda x: x * 3
+
+    print(triple(14))
+
+#factorial of a number by using recursion
+- Recursion is a concept where the function calls itself multiple times till a certain condition is met
+- The condition is important to prevent infinite loops
+- def factorial(a):
+    if a == 1:
+        return 1
+    else:
+        return (a * factorial(a - 1))
+
+input_number = 5
+print("The factorial of", input_number, "is", factorial(input_number))
+
+#Denote working of bool() with examples
+- bool() returns true or false
+- it cannot output anything else
+-   print(bool(a))
+    print(bool(b))
+    print(bool(c))
+    print(bool(sample_list)
+
+                            EXPERIENCED
+
+#How to create a new column in pandas using values from other columns.
+- We can perform column based mathematical operations on a pandas dataframe
+- Pandas columns containing numeric values can be operated upon by operators
+- import pandas as pd
+    a = [1, 2, 3]
+    b = [2, 3, 5]
+
+    d = {"col1":a, "col2": b}
+    df = pd.DataFrame(d)
+
+    df["sum"] = df["col1"] + df["col2"]
+    df["difference"] = df["col1"] - df["col2"]
+
+#Different functions that can be used by groupby in pandas
+- groupby() function in pandas can be used with multiple aggregate functions
+- E.g : sum(),mean(),count(),std()
+- Data is divided into groups based on categories and then data in these individual groups can be aggregated by using functions
+
+#How to select columns in pandas and add them to a new dataFrame? What if there are 2 columns with same name?
+- if df.Dataframe is pandas, df.columns gives the list of all columns
+- We can then form new columns by selecting particular columns
+- If there are two columns with same name then both columns get copied to new DataFrame
+
+#How to delete a column or group of columns in pandas?
+- drop() function can be used to delete columns from a Dataframe
+- d = {"col1":[1, 2, 3], "col2": ["A", "B", "C"]}
+
+    df = pd.DataFrame(d)
+
+    df = df.drop(['col1'], axis = 1)
+
+    df
+
+ #drop specific row in a DataFrame
+ - dropna() function
+ - d = {"col1":[1, 2, 3], "col2": ["A", "B", "C"]}
+
+    df = pd.DataFrame(d)
+
+    print(df)
+
+    df.dropna(inplace = True)
+    df = df[df.col1 != 1]
+    df
+
+
+#Learn to use groupby() and .max() in pandas
+
+#Re-indexing in Pandas
+-Re-indexing is the process of re-assigning the index of a pandas Dataframe
+import pandas as pd
+
+shoes = ["Nike", "Addidas", "Jordans", "Puma", "Reebok"]
+clothes = ["Gap", "Banana Republic", "Tommy Hilfiger", "American Eagle", "Champs"]
+d = {"shoes": shoes,"clothes": clothes}
+
+df = pd.DataFrame(d)
+a = [10, 20, 30, 40, 50]
+
+df.index = a
+df
+
+print(df)
+
+#lambda function to print the sum of all the elements in given list:
+
+from functools import reduce
+
+sample_list = [5, 8, 10, 20, 50, 100]
+
+addition = reduce(lambda x, y: x+y, sample_list)
+
+print(addition)
+
+
+#What is vstack() in Numpy? Give example
+- vstack() functions is used to align rows vertically. All rows must have same number of elements
+import numpy as np
+
+n1 = np.array([10, 20, 30, 40, 50])
+n2 = np.array([50, 60, 70, 80, 90])
+
+print(np.vstack((n1, n2)))
+
+
+#How python code is interpreted:
+- python program is converted into intermediate language
+- Then it is converted into machine language
+- Debugging can be dine modularly and on per-line basis
+
+#How to remove spaces from a string
+- Either use strip() function or replace() function
+- strip() is used to remove the leading and trailing white spaces while replace() is used to remove all white spaces in/
+    a string
+
+random_string = "Mind fulness"
+print(random_string.replace(" ", ""))
+
+#File processing modes supported by python
+There are 4 file processing modes in python:
+- read-only(r)
+- write-only(w)
+- read-write(rw)
+- append(a)
+
+Note : Binary flags - ("r", "w", "rw", "a")
+
+#pickling and unpickling
+- Pickling is process of converting a python object hierachy into a byte stream for storing it into a database.
+- Pickling is also known as serialization
+- Unpickling is reverse of pickling
+- the byte stream is converted back into object hierachy
+
+#How memory is managed in python
+- Memory management in python has a private heap containing all objects and data structure
+- The heap is managed by the interpreter and the programmer does not have acess to it all
+- The python memory manager does all the memory allocation
+- Moreover there is an inbuilt garbage collector that recycles and frees memory for the heap
+
+#What is unittest in python (Note: "unittest" is NOT "unit test")
+- unittest is a unit testing framework in python
+- it supports sharing setup and shutdown code for tests, aggregation of tests into collections, test automation,
+    and independence of the tests from the reporting framework
+
+#How to delete a file in python
+There are two function:
+- os.remove(filename) or os.unlink(filename)
+
+#How to create an empty class
+- We can use the pass command after the definition of a class object
+- A pass is a statement in oython that does nothing
+
+#Python Decorators
+- Decorators are functions that take other functions as arguments to modify
+    its behaviour without changing the function itself
+- They are useful when we want to dynamically increase the functionality
+    of a function without changing it.
+
+****************************************
+    def smart_divide(func):
+        def inner(a, b):
+            print("Dividing", a, "by", b)
+            if b == 0:
+                print("Make sure Denominator is not zero")
+                return
+            return func(a, b)
+        return inner
+
+    @smart_divide
+    def divide(a, b):
+        print(a/b)
+        divide(1,0) #remember to review this code
+*****************************************
+
+#What does early binding mean
+- This is a concept in OOPS that is used for many purposes
+- It is used to assign values during compile time to save a lot of time during the execution of the entire project
+
+#What type of inheritance is supported by python but not jave
+- Multiple inheritance - This is supported in python but not java
+- It is implemented in python to maximize program efficiency
+
+
+
+********************TRICKY*********************
+
+#How to implement a probability plot using Numpy and Matplotlib
+
+**********
+import numpy as np
+import pylab
+import scipy.stats as stats
+from matplotlib import pyplot as plt
+
+n1 = np.random.normal(loc=0, scale=1, size=1000)
+
+np.percentile(n1, 100)
+n1 = np.random.normal(loc=20, scale=3, size=1000)
+stats.probplot(n1, dist= "norm", plot= pylab)
+
+plt.show() #remember to review
+
+**************************************
+
+#Given sample dictionary. Update value of "Apple" from 10 to 100
+
+fruits = {"Apple":10,"Orange":20,"Watermelon":30,"Guava":40}
+
+fruits["Apple"] = 100
+
+print(fruits)
+
+
+#How to find common elements present in two given sets
+
+s1 = {1, 2, 3, 4, 5, 6}
+s2 = {5, 6, 7, 8, 9}
+common_value = s1.intersection(s2)
+print(common_value)
+
+#Implement logic to check if number is palindrome or not
+
+n = int(input("Enter number:"))
+
+temp = n
+rev = 0
+
+while(n > 0):
+    dig = n % 10
+    rev = rev* 10+dig
+    n = n//10
+if (temp == rev):
+    print("The number is a palindrome!")
+else:
+    print("The number is not a palindrome!")
+
+#Program the prints the following pattern:
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+
+for inp_num in range(6):
+    for i in range(inp_num):
+        print(inp_num, end = " ")
+    print("\n")
+
+
+second solution :
+
+def pattern_print(n):
+    for i in range(0, n):
+        for j in range(0, i+1):
+            print("#", end= "")
+        print("\r")
+
+pattern_print(5)
+
+
+#Print the following pattern
+
+0
+0 1
+0 1 2
+0 1 2 3
+0 1 2 3 4
+
+
+def pattern_three(num):
+    number = 1
+    #outer loop - handles the number of rows
+    #inner loop - controls the number
+
+    for i in range(0, num):
+        number = 0
+        #inner loop to handle number of colums
+        for j in range(0, i+1):
+
+            print(number, end= " ")
+            number = number + 1
+        print("\r")
+
+num = int(input("enter the number of rows in pattern: "))
+pattern_three(num)
+
+
+#Print the Pascal's Triangle pattern
+
+from math import factorial
+
+n = 6
+
+for x in range(n):
+    for y in range(n-x+1):
+
+        print(end = " ")
+    for y in range(x + 1):
+        #formula for ncr = n!/((n-r)!*r!)
+        print(factorial(x)//(factorial(y)*factorial(x - y)), end = " ")
+
+    print()
+
+#0C0
+#1C0 1C1
+#2C0 2C1 2C2
+#3C0 3C1 3C2 3C3
+
+#Print pattern:
+A
+BB
+CCC
+DDD
+
+def pattern_four(num):
+    #initializing value of A as 65
+    #ASCII value equivalent
+
+    number = 65
+    # outer loop always handles the number of rows
+    for i in range(0, num):
+
+        #inner loop handles the number of columns
+        for j in range(0, i+1):
+
+            # finding the ascii equivalent of the number
+            char = chr(number)
+
+            # printing char value
+            print(char, end= " ")
+
+        # incrementing number
+        number = number + 1
+
+        # ending line after each row
+        print("\r")
+
+num = int(input("Enter the number of rows in pattern: "))
+pattern_four(num)
+
+#Print the following pattern:
+A
+B C
+D E F
+G H I J
+K L M N O
+P Q R S T U
+
+def pattern_6(num):
+    # initializing value equivalent to "A" in ASCII
+    # ASCII value
+    number = 65
+
+    # outer loop always hand;es yhe number of rows
+    for i in range(0, num):
+        # inner loop always handles the number of columns
+        # values changing acc. to outer loop
+        for j in range(0, i+1):
+            # explicit conversion of int to char
+# returns character equivalent to ASCII.
+            char = chr(number)
+
+            # printing char value
+            print(char, end=" ")
+            # printing the next character by incrementing
+            number = number + 1
+        # ending line for each row
+        print("\r")
+num = int(input("enter the number of rows in the pattern: "))
+pattern_6(num)
+
+#Given a dictionary: d1 ={"k1":10,"k2":20,"k3":30}. Increment the values of all the keys
+d1 ={"k1":10, "k2":20, "k3":30}
+
+for i in d1.keys():
+     d1[i] = d1[i] + 10
+
+d1.values()
+
+print(d1.values())
+
+#Print random numbers using the random library
+
+import random
+
+n = random.random()
+print(n)
+
+# To generate an integer between a certain range (say from 3 to 30):
+
+import random
+
+n = random.randint(3, 30)
+print(n)
+
+#Denote the usage of args and kwargs in python
+def func1(*args, **kwargs):
+    print(args)
+    print(kwargs)
+    # Note args will pick up unnamed arguments while kwargs will pick up named arguments
+
+func1(1, 'hello', name='Angela')
+
+#How to shallow copy
+
+first_list = [1, 2, 3, 4, 5]
+second_list = first_list
+
+second_list.append(6)
+
+print(first_list)
+print(second_list) #6 is added to the first list even though it was added to the second list
+ # Note: learn about deep copy
+
+#Determine the output of the code:
+
+a = [1,2,3,4,5,6,7,8,9]
+b = a[-1: -4: -1]
+
+print(b)
+
+##Output : [9, 8, 7] #Everything between range of 9 and 7 is printed from the back of the list including 9 and 7
+
+
+#How to print ASCII value of a given character
+given_character = 'a'
+
+print("The ASCII value of '" + given_character + "' is", ord(given_character))
+
+
+# Easiest way to shuffle a list
+from random import shuffle
+values = ["Seize", "The", "Day", "Always"]
+
+shuffle(values)
+print(values)
+
+#How floor division works in python
+- floor division is different from regular division
+- It removes the floating point number and rounds the value to the next lowest value
+
+print(5//2)
+print(-7//2)
+print(7.0//2)
+print(-7.0//2)
+
+
+#Denote the usage of pass by value and pass by reference
+def check_pass(blah_blah):
+    blah_blah.append(4)
+
+blah_blah = [1, 2, 3]
+
+print(blah_blah) #call by value
+
+check_pass(blah_blah)
+print(blah_blah) #call by reference
+
+##Determine the output of the code:
+d = "Hello World"[::-1]  #this reverses the entire string
+##Output = dlroW olleH
+
+###Determine the output of the code:
+d = "Hello World"[:-1]
+
+##Output = Hello Worl
+
+
+#Output of operation on list: list x 2
+
+list1 =[1, 2, 3, 4, 5]
+
+list1 * 2
+
+##Output = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+
+#Write the logic to check if a given number is an Armstrong number or not
+- Armstrong number is a number then when you take the cube of every digit and add them up, it equals the number e.g 153
+
+number_input = int(input("Enter a number: "))
+
+sum = 0
+
+temp = number_input # finding the cube of every digit
+while temp > 0:
+    digit = temp % 10
+    sum += digit ** 3
+    temp //= 10
+
+if number_input == sum:
+    print(number_input, "is an Armstrong number")
+else:
+    print(number_input, "is not an Armstrong number")
+
+# Logic to print a perfect number in python
+
+- e.g 6, 28, 8128
+number_input = int(input("Enter a number: "))
+
+sum = 0
+
+for i in range(1, number_input):
+    if(number_input % i == 0):
+        sum = sum + i
+
+if(sum == number_input):
+    print("%d is a perfect Number" %number_input)
+else:
+    print("%d is a not perfect Number" %number_input)
+
+#Logic for a strong number
+
+sum = 0
+
+number_input = int(input("Enter a number: "))
+
+temp = number_input
+
+while(number_input):
+    i = 1
+    fact = 1
+    rem = number_input % 10
+    while(i <= rem):
+        fact = fact * i
+        i = i + 1
+    sum = sum + fact
+    number_input = number_input//10
+
+if (sum == temp):
+  print("The given number is a strong number")
+else:
+ print("The given number is not an strong number")
+
+#Find out the second largest number in a list
+sample_list = []
+
+n = int(input("Enter a number: "))
+
+for i in range(1, n + 1):
+    b = int(input("Enter element: "))
+    sample_list.append(b)
+    sample_list.sort()
+
+print("Second largest element is: ", sample_list[n - 2])
+
+#Logic to quickly swap first and last elements in a list
+
+def swap_func(sample_list):
+    size = len(sample_list)
+
+    # Swap logic
+    temp = sample_list[0]
+    sample_list[0] = sample_list[size - 1]
+    sample_list[size - 1] = temp
+
+    return sample_list
+
+sample_list = [14, 18, 22, 26, 30]
+print(sample_list)
+print(swap_func(sample_list))
+
+#count the number of vowels present in an input string
+
+def vowel_check(input_string, vowel_list):
+    num_vowels = [each for each in input_string if each in vowel_list]
+    print(len(num_vowels))
+    print(num_vowels)
+
+input_string = "Today is a sunny day"
+vowel_list = "AaEeIiOoUu"
+vowel_check(input_string, vowel_list)
+
+#How to break a list into n parts
+
+sample_list = [14, 18, 22, 26, 30, 60, 6, 34, 56, 13, 14, 90, 67, 909]
+
+n = 4
+
+out = [sample_list[i:i + n] for i in range(0, len(sample_list), n)]
+print(out)
+
+
+#Denote the working of python exception handling
+try:
+    x = int(input("Enter first number: "))
+    y = int(input("Enter second number: "))
+    z = x/y
+    print("The output is ", z)
+except:
+    print("Cannot divide by zero")
+else:
+    print("this is the else block")
+
+
+#How does finally block work
+
+try:
+    x = 5//0
+    print(x)
+
+except ZeroDivisionError:
+    print("Cannot divide by zero!!")
+finally:
+    # This is executed regardless of exception occurrence
+    print("This piece of code is always executed")
+
+
+#Learn about SQL Alchemy(won't make much difference in  pipeline)
+
+
+
+
+
+
+
