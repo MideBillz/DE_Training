@@ -1022,3 +1022,37 @@ def print_list(o):
 
 if __name__ == '__main__': main()
 
+#Write data to a file
+ with open("my_file_text", "w") as f:
+    f.write("sample content 1")
+
+#To append written data in a file
+with open("my_file_text", "a") as f:
+   f.write(", appended content")
+
+#Initializing class level variables using constructors
+import ingest
+import persist
+
+class Test:
+    def __init__(self, fileType):
+        print("i'm within the constructor")
+        self.file_type = fileType
+    def my_function(self):
+         print('inside my function . Processing ' + self.file_type + " file")
+         reader = ingest.FileReader(self.file_type)
+         writer = persist.PersistData("postgres")
+         reader.read_file()
+         writer.store_data()
+
+
+if __name__ == '__main__':
+    eg = Test("csv")  #Creating an instance of the objects
+    eg.my_function()
+    # reader = ingest.FileReader()
+    # writer = persist.PersistData()
+    # reader.read_file()
+    # writer.store_data()
+
+
+#Logging using basic config
