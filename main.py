@@ -1,6 +1,5 @@
 import ingest
 import persist
-import logging
 
 
 class Test:

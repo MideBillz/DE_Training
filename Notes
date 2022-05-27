@@ -1054,5 +1054,6 @@ if __name__ == '__main__':
     # reader.read_file()
     # writer.store_data()
 
+Note: Added files "ingest.py" and "persist.py" to project to better explain how constructors work /
+/ and how to work with multiple files
 
-#Logging using basic config

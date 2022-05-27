@@ -4,4 +4,4 @@ class FileReader:
         self.file_type = fileType
 
     def read_file(self):
-        print('Reading a file' + self.file_type + " file")
+        print('Reading a ' + self.file_type + " file")
