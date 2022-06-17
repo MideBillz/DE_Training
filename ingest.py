@@ -1,7 +1,9 @@
 import logging
+import logging.config
+
 
 class FileReader:
-    logging.basicConfig(level="DEBUG")
+    logging.config.fileConfig("resources/configs/logging.conf")
     def __init__(self, fileType):
         logging.debug("i'm within the FileReader constructor")
         self.file_type = fileType

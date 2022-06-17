@@ -1127,3 +1127,6 @@ if __name__ == '__main__':
     print("Hello World")
     eg = Test("csv")  #Creating an instance of the objects
     eg.my_function()
+
+
+#Logging using file config:

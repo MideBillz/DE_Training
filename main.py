@@ -1,10 +1,11 @@
 import ingest
 import persist
 import logging
+import logging.config
+
 
 class Test:
-    logging.basicConfig(level="DEBUG")
-    #Note, The level can be changed and set to something else" e.g level=WARNING"
+    logging.config.fileConfig("resources/configs/logging.conf")
     def __init__(self, fileType):
         logging.debug("i'm within the constructor")
         self.file_type = fileType
