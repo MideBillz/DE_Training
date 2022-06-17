@@ -1,7 +1,10 @@
+import logging
+
 class FileReader:
+    logging.basicConfig(level="DEBUG")
     def __init__(self, fileType):
-        print("i'm within the FileReader constructor")
+        logging.debug("i'm within the FileReader constructor")
         self.file_type = fileType
 
     def read_file(self):
-        print('Reading a ' + self.file_type + " file")
+        logging.debug('Reading a ' + self.file_type + " file")

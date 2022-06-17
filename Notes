@@ -1063,6 +1063,8 @@ Note: Added files "ingest.py" and "persist.py" to project to better explain how 
 
 Note: Typically in Production environments you will print only Warning and Error
 
+#Files used - (Main.py, ingest.py,persist.py)
+
 import ingest
 import persist
 import logging
@@ -1088,6 +1090,40 @@ if __name__ == '__main__':
     logging.info("This is an info message")
     logging.warning("This is a warning message")
     logging.error("This is an error message")
+    print("Hello World")
+    eg = Test("csv")  #Creating an instance of the objects
+    eg.my_function()
+
+NOTE: Typically in a production environment we will set log level to warning and error but if any issues are encountered
+      then we set the log level to debug or info to get more information from the application.
+
+
+
+****************LOGGING with logging.basicConfig() as a class level variable ***********************
+
+#Files used - (Main.py, ingest.py,persist.py)
+
+
+import ingest
+import persist
+import logging
+
+class Test:
+    logging.basicConfig(level="DEBUG")
+    #Note, The level can be changed and set to something else" e.g level=WARNING"
+    def __init__(self, fileType):
+        logging.debug("i'm within the constructor")
+        self.file_type = fileType
+    def my_function(self):
+         logging.debug('inside my function . Processing ' + self.file_type + " file")
+         reader = ingest.FileReader(self.file_type)
+         writer = persist.PersistData("postgres")
+         reader.read_file()
+         writer.store_data()
+
+
+if __name__ == '__main__':
+    print("Entering the main method")
     print("Hello World")
     eg = Test("csv")  #Creating an instance of the objects
     eg.my_function()
